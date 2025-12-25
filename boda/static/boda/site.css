@@ -1,0 +1,24 @@
+.message {
+    font-weight: 600;
+    color: blue;
+}
+
+body {
+    margin: 0;
+    border: 0;
+    padding: 0;
+
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.seccion1 {
+    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('/static/boda/Principal2.jpg');
+    background-repeat: no-repeat;
+    background-position: 55% 40%;
+    background-attachment: local;
+    
+    background-size: 140% 130%pt;
+
+    height: 600pt;
+}

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Hello, Django</title>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'boda/site.css' %}" />
+    </head>
+    <body>
+        <!-- <strong>Hola buenas, {{ name }}!</strong> Hoy es {{ date | date:"l, d F, Y" }} a las 
+            {{ date |time:"H:i:s" }} -->
+        <span class="message">Hello, there {{ name }}!</span> It's {{ date | date:'l, d F, Y' }} at 
+            {{ date | time:'H:i:s' }}.
+    </body>
+</html>

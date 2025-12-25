@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Boda Adri y Celia</title>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'boda/site.css' %}" />
+        <link href='https://fonts.googleapis.com/css?family=Allura' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Playfair Display' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Libre Baskerville' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    </head>
+    <body style="font-family: Inter;">
+        <!-- <img src="/static/boda/Principal.jpg" margin="0pt" position="center" /> -->
+        <section class="seccion1">
+            <center>
+                <h1 style="font-size: 48pt; font-family: Allura; padding-top: 12%; margin-top: 0pt;
+                        color: whitesmoke; letter-spacing: 20pt;">
+                    Adrián & Celia
+                </h1>
+                <img src="/static/boda/Separador.png", width="17%", height="9pt">
+                <p style="font-size: 24pt; font-family: Playfair Display; 
+                        color: whitesmoke; letter-spacing: 7pt;">¡Nos casamos!</p>
+                <p style="font-size: 28pt; font-family: Libre Baskerville; 
+                        color: whitesmoke; letter-spacing: 3pt;">12 de septiembre, 2026</p>
+                <p style="font-size: 24pt; color: whitesmoke; ">Finca La Ermita de Los Llanos</p>
+                <p style="font-size: 18pt; color: whitesmoke; letter-spacing: 1pt;">Arenas de San Pedro, Ávila</p>
+                <p style="font-size: 13pt; font-family: Montserrat;  padding-top: 2%;
+                        color: whitesmoke;">Apúntate</p>
+                <img src="/static/boda/FlechaAbajo.png", width="3%", height="45pt", padding-top="0">
+            </center>
+        </section>
+        <section style="margin: 10pt; display: grid; grid-template-columns: repeat(3, 33%); 
+                padding-top: 40pt; align-content: start;">
+            <h1></h1>
+            <div style="grid-column: 1; align-content: center; text-align: center;">
+                <img src="/static/boda/IconoCalendario.png" width="60px">
+                <p style="font-size: 14pt; font-weight: bold;">Fecha</p>
+                <p style="font-size: 12pt;">12 de septiembre, 2026</p>
+            </div>
+            <div style="grid-column: 2; align-content: center; text-align: center;">
+                <img src="/static/boda/Ubicacion.png" width="60px">
+                <p style="font-size: 14pt; font-weight: bold;">Lugar</p>
+                <p style="font-size: 10pt;">
+                    <span style="font-size: 12pt;">Ermita de Los Llanos</span><br>
+                    Arenas de San Pedro, Ávila
+                </p>
+            </div>
+            <div style="grid-column: 3; align-content: center; text-align: center;">
+                <img src="/static/boda/IconoHora.png" width="60px">
+                <p style="font-size: 14pt; font-weight: bold;">Hora</p>
+                <p style="font-size: 12pt;">17:30h</p>
+            </div>
+        </section>
+        <section style="display: flex; gap: 80pt; flex-wrap: nowrap;
+                align-content: start; margin-left: 15%; margin-right: 24%;">
+            <h1></h1>
+            <button name="Direccion" id="Direccion" style="flex: 1 1 200px; width: 60%; align-self: center; 
+                    text-align: center; height: 27pt; border-radius: 12pt; border: none; 
+                    background-color: rgb(0, 96, 53); color: whitesmoke; font-size: 12pt; 
+                    font-weight: bold; background-image: url(/static/boda/IconoUbicacion.png);
+                    background-position: left; background-repeat: no-repeat; background-attachment: local;
+                    background-position: 3% 50%; background-size: 20pt 75%;"
+                    onmouseover="setColor('Direccion', '#004C2A')" 
+                    onmouseout="setColor('Direccion', '#006035')"
+                    onclick="redirigirMaps('Direccion')">
+                &emsp;Ver en Google Maps
+            </button>
+            <button name="Evento" id="calendario" style="flex: 1 1 200px; width: 60%; align-self: center;
+                    text-align: center; height: 27pt; border-radius: 12pt; border: none; 
+                    background-color: rgb(0, 96, 53); color: whitesmoke; font-size: 12pt; 
+                    font-weight: bold; background-image: url(/static/boda/IconoCalendarioVacío.png);
+                    background-position: left; background-repeat: no-repeat; background-attachment: local;
+                    background-position: 3% 50%; background-size: 20pt 75%;"
+                    onmouseover="setColor('calendario', '#004C2A')" 
+                    onmouseout="setColor('calendario', '#006035')"
+                    onclick="descargarEvento('calendario')">
+                &emsp;Añadir al calendario
+            </button>
+        </section>
+        <p style="text-align: center; font-size: 10pt; padding-bottom: 40pt;">
+            Habrá servicio de autobus privado de ida y vuelta desde Madrid el día de la celebración
+        </p>
+    </body>
+
+    <script>
+    function setColor(btn, color){
+        var property = document.getElementById(btn);
+        property.style.backgroundColor = color
+    }
+
+    function redirigirMaps(btn){
+        setColor(btn,"#002E19")
+        setTimeout(() => {setColor(btn,"#006035");}, 200)
+        window.open("https://maps.app.goo.gl/qNmrgQeFCyVfvx5J9")
+    }
+
+    function descargarEvento(btn){
+        setColor(btn,"#002E19")
+        setTimeout(() => {setColor(btn,"#006035");}, 200)
+        // location.href = "evento"
+        window.open("{% static 'boda/bodaAdriyCelia.ics' %}")
+    }
+    </script>
+</html>
