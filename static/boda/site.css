@@ -22,3 +22,14 @@ body {
 
     height: 600pt;
 }
+
+.seccion2 {
+    background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url('/static/boda/FondoInvitacion.jpg');
+    background-repeat: no-repeat;
+    background-position: 55% 40%;
+    background-attachment: local;
+    
+    background-size: 140% 130%pt;
+
+    height: 550pt;
+}
